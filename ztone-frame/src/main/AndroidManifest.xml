@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="android.frame">
+
+    <application>
+        <provider
+            android:name=".app.AppLauncher"
+            android:authorities="${applicationId}.frame"
+            android:exported="false"
+            android:multiprocess="true" />
+    </application>
+</manifest>

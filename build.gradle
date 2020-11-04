@@ -1,0 +1,44 @@
+apply from: 'http://mvn.cvdnn.com/configs.gradle'
+
+def aptBuildVersion() {
+    return new Date().format("yyyyMMddHH", TimeZone.getTimeZone("GMT+8")).toInteger()
+}
+
+ext {
+    app = [compileSdkVersion: 28,
+           applicationId    : "com.ztone.rule",
+           minSdkVersion    : 24,
+           targetSdkVersion : 28,
+           versionCode      : aptBuildVersion(),
+           versionName      : "2.6.10",
+           buildToolsVersion: '29.0.3',]
+}
+
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.3'
+
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+    }
+}
+
+allprojects {
+    repositories {
+        maven {
+            url 'https://dl.bintray.com/cvdnn/maven'
+        }
+
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
