@@ -1,6 +1,7 @@
 package android.frame.app;
 
-import android.frame.context.AbstractProvider;
+
+import android.frame.AbstractProvider;
 
 public class AppLauncher extends AbstractProvider {
     private static final String TAG = "AppLauncher";
