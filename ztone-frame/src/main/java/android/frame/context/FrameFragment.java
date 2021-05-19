@@ -12,6 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewbinding.ViewBinding;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public abstract class FrameFragment<V extends ViewBinding> extends Fragment {
 
     @NonNull
@@ -41,6 +43,18 @@ public abstract class FrameFragment<V extends ViewBinding> extends Fragment {
             activity.runOnUiThread(() -> {
                 if (!activity.isFinishing()) {
                     Toast.makeText(activity, String.format(text, args), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    }
+
+    protected void makeSnack(final String text, final Object... args) {
+        Activity activity = getActivity();
+        if (activity != null) {
+            activity.runOnUiThread(() -> {
+                if (!activity.isFinishing()) {
+                    Toast.makeText(activity, String.format(text, args), Toast.LENGTH_SHORT).show();
+                    Snackbar.make(binding.getRoot(), String.format(text, args), Snackbar.LENGTH_SHORT).show();
                 }
             });
         }

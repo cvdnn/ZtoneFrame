@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewbinding.ViewBinding;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public abstract class FrameActivity<V extends ViewBinding> extends AppCompatActivity {
 
     @NonNull
@@ -49,6 +51,14 @@ public abstract class FrameActivity<V extends ViewBinding> extends AppCompatActi
         runOnUiThread(() -> {
             if (!isFinishing()) {
                 Toast.makeText(FrameActivity.this, String.format(text, args), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    protected void makeSnack(final String text, final Object... args) {
+        runOnUiThread(() -> {
+            if (!isFinishing()) {
+                Snackbar.make(binding.getRoot(), String.format(text, args), Snackbar.LENGTH_SHORT).show();
             }
         });
     }

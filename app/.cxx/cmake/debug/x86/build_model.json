@@ -14,7 +14,7 @@
       "compilerSettingsCacheFolder": "/Users/xiot/workon/ztone/ZtoneFrame/.cxx",
       "cxxFolder": "/Users/xiot/workon/ztone/ZtoneFrame/app/.cxx",
       "ndkFolder": "/opt/AndroidSDK/ndk-bundle",
-      "ndkVersion": "21.1.6352462",
+      "ndkVersion": "22.0.7026061",
       "ndkSupportedAbiList": [
         "ARMEABI_V7A",
         "ARM64_V8A",

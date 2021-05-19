@@ -1,2 +1,6 @@
 include ':app', ':lib-frame', ':ztone-frame'
 include ':widget-loading'
+
+// cvdnn-lang
+include ':cvdnn-lang'
+project(':cvdnn-lang').projectDir = new File('/Users/xiot/workon/ztone/ZtoneLang/cvdnn-lang')
